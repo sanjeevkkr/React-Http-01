@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 class Blog extends Component {   
 
@@ -12,8 +12,16 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li><a href='/'>Home</a></li>
-                            <li><a href='/new-post'>New Post</a></li>
+                            {/* As <a> tag always reload the page which lose the state, 
+                                so react has a special component i.e, Link  */}
+                            <li><Link to='/'>Home</Link></li>
+                            {/* to can be a complex element that can be js object, can be a dynamic content
+                                for example */}
+                            <li><Link to={{
+                                pathname: '/new-post',
+                                hash: '#submit',
+                                search: '?quick-submit=true'
+                            }}>New Post</Link></li>
                         </ul>
                     </nav>
                 </header>
