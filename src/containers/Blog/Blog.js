@@ -11,17 +11,9 @@ class Blog extends Component {
             <div className='Blog'>
                 <header>
                     <nav>
-                        <ul>
-                            {/* As <a> tag always reload the page which lose the state, 
-                                so react has a special component i.e, Link  */}
-                            <li><Link to='/'>Home</Link></li>
-                            {/* to can be a complex element that can be js object, can be a dynamic content
-                                for example */}
-                            <li><Link to={{
-                                pathname: '/new-post',
-                                hash: '#submit',
-                                search: '?quick-submit=true'
-                            }}>New Post</Link></li>
+                        <ul>                            
+                            <li><Link to='/'>Home</Link></li>                          
+                            <li><Link to='/new-post'>New Post</Link></li>
                         </ul>
                     </nav>
                 </header>
